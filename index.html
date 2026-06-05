@@ -511,7 +511,7 @@ const updateBC=()=>{document.getElementById('bcnt').textContent=getFilt().length
 function renderBrands(){
   const g=document.getElementById('bg');
   g.innerHTML=getFilt().map((b,i)=>`
-  <div class="b-logo">${b.e}</div>
+   <div class="bc" data-id="${b.id}" style="animation-delay:${Math.min(i*.04,.8)}s">
   
       <div class="b-logo">${b.e}</div>
       <div class="b-name">${b.name}</div>
