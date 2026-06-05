@@ -341,7 +341,8 @@ const IMGS={
   g3:       U+'1563720223185-11003d516935?w=700&q=75&fit=crop&auto=format',
 };
   const BRANDS=[
-  {id:'ferrari',name:'Ferrari',flag:'🇮🇹',org:'Italy · 1939',e:'[https://upload.wikimedia.org/wikipedia/en/d/df/Ferrari_Logo.svg.png](https://upload.wikimedia.org/wikipedia/en/d/df/Ferrari_Logo.svg.png)',cat:['supercar','sport','luxury']},
+  {id:'ferrari', name:'Ferrari', flag:'🇮🇹', org:'Italy', e:'https://upload.wikimedia.org/wikipedia/en/d/df/Ferrari_Logo.svg.png'},
+    
   {id:'lamborghini',name:'Lamborghini',flag:'🇮🇹',org:'Italy · 1963',e:'🐂',cat:['supercar','luxury']},
   {id:'porsche',name:'Porsche',flag:'🇩🇪',org:'Germany · 1931',e:'🐎',cat:['sport','luxury']},
   {id:'bugatti',name:'Bugatti',flag:'🇫🇷',org:'France · 1909',e:'🦋',cat:['supercar','luxury']},
@@ -529,7 +530,8 @@ function openBrand(id){
   document.getElementById('cg').innerHTML=cars.map((c,i)=>`
     <div class="cc" data-i="${i}">
       <div class="c-img">
-        <div class="c-ph" id="ph${id}${i}"><div class="c-ph-ico">${c.e||'🚗'}</div><div class="c-ph-txt">${c.m}</div></div>
+        <div class="c-ph-ico"><img src="${c.e}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"></div>
+        
         <img src="${c.img}" alt="${c.m}" loading="lazy"
           onload="this.style.display='block';document.getElementById('ph${id}${i}').style.display='none'"
           onerror="this.style.display='none';document.getElementById('ph${id}${i}').style.display='flex'"
