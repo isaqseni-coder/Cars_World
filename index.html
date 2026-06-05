@@ -561,7 +561,8 @@ function open3D(i){
   const ph=document.getElementById('c3dp');
   img.style.display='none';ph.style.display='none';
   img.onload=()=>{img.style.display='block';ph.style.display='none'};
-  img.onerror=()=>{img.style.display='none';ph.innerHTML=`<span>${car.e||'🚗'}</span><span>${car.m}</span>`;ph.style.display='flex'};
+  img.onerror = () => { img.style.display = "none"; ph.innerHTML = `<img src="${car.e}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"><span>${car.n}</span>`; ph.style.display = "flex"; };
+  
   img.src=car.img;
   // specs
   const PA=['0-100','Top Speed','Downforce'],DR=['Engine','Power','Torque','Drive','Gearbox','Range','Battery','EV Range'];
