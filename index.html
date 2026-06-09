@@ -531,12 +531,7 @@ function openBrand(id){
   document.getElementById('cg').innerHTML=cars.map((c,i)=>`
     <div class="cc" data-i="${i}">
       <div class="c-img">
-        <div class="c-ph-ico"><img src="${c.e}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"></div>
-        
-        <img src="${c.img}" alt="${c.m}" loading="lazy"
-          onload="this.style.display='block';document.getElementById('ph${id}${i}').style.display='none'"
-          onerror="this.style.display='none';document.getElementById('ph${id}${i}').style.display='flex'"
-          style="display:none">
+        <img src="${c.img}" alt="${c.m}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
         <div class="c-img-ov"></div>
         <div class="c-badge">${c.t}</div>
       </div>
